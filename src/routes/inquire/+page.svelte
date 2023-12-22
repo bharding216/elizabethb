@@ -12,7 +12,7 @@
         message = formData.get('message');
 
         // http://127.0.0.1:3000/inquire
-        const response = await fetch('https://ra2zi0tu5d.execute-api.us-east-2.amazonaws.com/send-email', {
+        const response = await fetch('https://2jealshrq3ogi6nfghzshfj5a40kdokp.lambda-url.us-east-2.on.aws/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
