@@ -13,7 +13,7 @@
 
         // http://127.0.0.1:3000/inquire
         // http://brandon-env.eba-j3ntzyxm.us-east-2.elasticbeanstalk.com/
-        const response = await fetch('http://brandon-env.eba-j3ntzyxm.us-east-2.elasticbeanstalk.com/inquire', {
+        const response = await fetch('https://brandon-env.eba-j3ntzyxm.us-east-2.elasticbeanstalk.com/inquire', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
