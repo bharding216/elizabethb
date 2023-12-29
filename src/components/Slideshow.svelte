@@ -1,10 +1,11 @@
 <script>
     let currentImage = 0;
     const images = [
-      '/jrc/_DSC3692.jpg',
-      '/jrc/_DSC3653.jpg',
-      '/jrc/_DSC3778.jpg',
-      '/jrc/_DSC3856.jpg',
+      '/jrc/jrc_2.jpg',
+      '/jrc/jrc_1.jpg',
+      '/jrc/jrc_4.jpg',
+      '/jrc/jrc_3.jpg',
+      '/jrc/jrc_0.jpg',
     ];
   
     const nextImage = () => {
