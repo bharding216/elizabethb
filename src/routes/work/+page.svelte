@@ -21,6 +21,10 @@
 		selectedImage = selectedCategoryImages[currentIndex];
 	}
 
+	function closeOverlay() {
+		selectedImage = null;
+	}
+
 	const nextImage = () => navigate(1);
 	const prevImage = () => navigate(-1);
 
@@ -36,6 +40,7 @@
   
   {#if selectedImage !== null}
 	<div class="overlay">
+		<button on:click={closeOverlay} class="close-button">✕</button>
 		<button on:click={prevImage} class="prev">&#8249;</button>
 		<div class="overlay-content">
 			<img src={selectedImage} alt="Maximized" class="maximized-image" />
@@ -93,7 +98,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 40px;
+        font-size: 60px;
         cursor: pointer;
         border: none;
         background: none;
@@ -111,4 +116,15 @@
     .next {
         right: 0;
     }
+
+	.close-button {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 24px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		color: white;
+	}
   </style>
