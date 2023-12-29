@@ -6,20 +6,42 @@
 <script>
 	let images = [
 	  '/greystone/_DSC3010.jpg',
-	  '/greystone/_DSC2912.jpg',
-	  '/greystone/_DSC2979.jpg',
-	  '/greystone/_DSC3284.jpg'
+	  '/hill_country/TXFB65-632824.jpg',
+	  '/jrc/_DSC3487.jpg',
+	  '/office/IMG_2833.jpg'
 	];
   
 	let selectedImage = null;
+	let selectedCategoryImages = [];
+  	let currentIndex = 0;
   
 	function openOverlay(image) {
 	  selectedImage = image;
+	  selectedCategoryImages = images.filter(img => img.includes(image.split('/')[1]));
+	  console.log(selectedCategoryImages)
+      currentIndex = selectedCategoryImages.indexOf(image);
 	}
   
 	function closeOverlay() {
 	  selectedImage = null;
+	  selectedCategoryImages = [];
+      currentIndex = 0;
 	}
+
+	function navigate(direction) {
+		currentIndex = (currentIndex + direction + selectedCategoryImages.length) % selectedCategoryImages.length;
+		selectedImage = selectedCategoryImages[currentIndex];
+	}
+
+    const nextImage = () => {
+		currentIndex = (currentIndex + 1 + selectedCategoryImages.length) % selectedCategoryImages.length;
+		selectedImage = selectedCategoryImages[currentIndex];
+    };
+  
+    const prevImage = () => {
+		currentIndex = (currentIndex - 1 + selectedCategoryImages.length) % selectedCategoryImages.length;
+		selectedImage = selectedCategoryImages[currentIndex];
+    };
   </script>
   
   <div class="grid">
@@ -31,12 +53,14 @@
   </div>
   
   {#if selectedImage !== null}
-  <button class="overlay" on:click={closeOverlay}>
-    <div class="overlay-content">
-      <img src={selectedImage} alt="Maximized" class="maximized-image" />
-    </div>
-  </button>
-{/if}
+	<div class="overlay">
+		<button on:click={prevImage} class="prev">&#8249;</button>
+		<div class="overlay-content">
+			<img src={selectedImage} alt="Maximized" class="maximized-image" />
+		</div>
+		<button on:click={nextImage} class="next">&#8250;</button>
+	</div>
+	{/if}
 
 <style>
 	.grid {
@@ -45,6 +69,16 @@
 	  gap: 16px;
 	}
   
+	.image-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		border: none;
+		padding: 0;
+		margin: 0;
+  }
+
 	.portfolio-image {
 	  width: 100%;
 	  height: auto;
@@ -72,4 +106,27 @@
 	  width: 100%;
 	  height: auto;
 	}
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 40px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: rgb(255, 255, 255);
+        outline: black;
+        display: inline-block;
+        background-color: none;
+        padding: 8px;
+    }
+
+    .prev {
+        left: 0;
+    }
+
+    .next {
+        right: 0;
+    }
   </style>
