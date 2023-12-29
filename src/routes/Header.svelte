@@ -7,7 +7,7 @@
 		<div class="container">
 			<!--Logo to the left-->
 			<a class="navbar-brand" href="/">
-				<img alt="Company logo" src="src/lib/images/github.svg" width="150" height="150" class="d-inline-block align-top">
+				<img alt="Company logo" src="src/lib/images/logo.png" width="150" height="150" class="d-inline-block align-top">
 			</a>
 
 			<button class="navbar-toggler" 
@@ -16,7 +16,6 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
 
 			<!--Links to the right-->
 			<div class="navbar-collapse collapse" id="navbarSupportedContent">
