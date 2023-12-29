@@ -6,7 +6,8 @@
 	<nav class="navbar sticky-top navbar-expand-lg navbar-custom static-top">
 		<div class="container">
 			<!--Logo to the left-->
-			<a class="navbar-brand" href="/">X
+			<a class="navbar-brand" href="/">
+				<img alt="Company logo" src="/logo.png" width="150" height="150" class="d-inline-block align-top">
 			</a>
 
 			<button class="navbar-toggler" 

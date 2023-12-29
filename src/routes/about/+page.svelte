@@ -4,7 +4,7 @@
 </svelte:head>
 
 <div>
-	<img class="header-image" src="/src/lib/images/greystone/_DSC3010.jpg" alt="My about page header.">
+	<img class="header-image" src="/greystone/_DSC3010.jpg" alt="My about page header.">
 </div>
 
 <div class="row text-center">
@@ -27,7 +27,7 @@
 	</div>
 
 	<div class="col-6">
-		<img class="header-image" src="/src/lib/images/Headshot3_IG.jpg" alt="My about page header.">
+		<img class="header-image" src="/Headshot3_IG.jpg" alt="My about page header.">
 	</div>
 </div>
 
