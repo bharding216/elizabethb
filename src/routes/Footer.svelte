@@ -1,8 +1,8 @@
 <script>
 	import { page } from '$app/stores';
 
-    const facebookLink = 'https://www.facebook.com/';
-    const instagramLink = 'https://www.instagram.com/';
+    const facebookLink = 'https://www.facebook.com/people/Elizabeth-B-Interiors-LLC/100054350988710/?sk=photos';
+    const instagramLink = 'https://www.instagram.com/elizabeth_b_interiors/';
 </script>
 
 <footer>
@@ -43,6 +43,7 @@
 <style>
   .social-link {
     font-size: 36px;
+    color: rgb(93, 93, 93);
   }
 
   .fbook-link {

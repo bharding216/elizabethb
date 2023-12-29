@@ -61,6 +61,17 @@
                 <label for="message">Message</label>
             </div>   
             
+            <div>
+                <p>Other things to include:</p>
+                <ul>
+                    <li>Phone</li>
+                    <li>City</li>
+                    <li>Project type: (new construction or renovation)</li>
+                    <li>Project budget: (under 50k, 50-100, 100+)</li>
+                    <li>phone</li>
+                </ul>
+            </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>
