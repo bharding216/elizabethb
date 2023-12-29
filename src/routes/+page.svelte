@@ -1,6 +1,5 @@
 <script>
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import Slideshow from '/src/components/Slideshow.svelte';
 </script>
 
 <svelte:head>
@@ -9,12 +8,7 @@
 </svelte:head>
 
 <section>
-	<h1>
-		Welcome!
-	</h1>
-
-
-
+	<Slideshow />
 </section>
 
 <style>
