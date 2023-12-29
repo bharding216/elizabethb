@@ -36,7 +36,7 @@
 
 <div class=container>
     <div>
-        <h1 class="pb-4">Let's Partner Up</h1>
+        <h1 class="pb-4">Let's Design Your Dream Space Together</h1>
 
         {#if confirmationMessage}
             <p>{confirmationMessage}</p>
@@ -72,7 +72,7 @@
                 </ul>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-secondary">Submit</button>
 
         </form>
     </div>

@@ -21,19 +21,13 @@
     
         <div class="row">
             <div class="col-12">
-                <p>
-                    &copy; 2023 Elizabeth B. Interiors
-                </p>
+                <p class="fw-bold">&copy; 2023 Elizabeth B. Interiors</p>
             </div>
         </div>
     
         <div class="row">
             <div class="col-12">
-                <p>
-                    Site created by <a class="hover-link" href="https://www.getsurmount.com/"
-                    target="_blank"
-                    rel="noopener noreferrer">Surmount Web Development</a>
-                </p>
+                <p>Site created by <a class="hover-link" href="https://www.getsurmount.com/" target="_blank" rel="noopener noreferrer">Surmount Web Development</a></p>
             </div>
         </div>
     </div>
