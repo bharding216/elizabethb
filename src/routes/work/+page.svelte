@@ -4,28 +4,16 @@
 </svelte:head>
 
 <script>
-	let images = [
-	  '/greystone/_DSC3010.jpg',
-	  '/hill_country/TXFB65-632824.jpg',
-	  '/jrc/_DSC3487.jpg',
-	  '/office/IMG_2833.jpg'
-	];
-  
+
+	let categories = ['greystone', 'hill_country', 'jrc', 'office'];
 	let selectedImage = null;
 	let selectedCategoryImages = [];
   	let currentIndex = 0;
   
-	function openOverlay(image) {
-	  selectedImage = image;
-	  selectedCategoryImages = images.filter(img => img.includes(image.split('/')[1]));
-	  console.log(selectedCategoryImages)
-      currentIndex = selectedCategoryImages.indexOf(image);
-	}
-  
-	function closeOverlay() {
-	  selectedImage = null;
-	  selectedCategoryImages = [];
-      currentIndex = 0;
+	function openOverlay(category) {
+		selectedCategoryImages = Array.from({ length: 5 }, (_, imageIndex) => `/${category}/${category}_${imageIndex}.jpg`);
+		currentIndex = 0;
+		selectedImage = selectedCategoryImages[currentIndex];
 	}
 
 	function navigate(direction) {
@@ -33,22 +21,16 @@
 		selectedImage = selectedCategoryImages[currentIndex];
 	}
 
-    const nextImage = () => {
-		currentIndex = (currentIndex + 1 + selectedCategoryImages.length) % selectedCategoryImages.length;
-		selectedImage = selectedCategoryImages[currentIndex];
-    };
-  
-    const prevImage = () => {
-		currentIndex = (currentIndex - 1 + selectedCategoryImages.length) % selectedCategoryImages.length;
-		selectedImage = selectedCategoryImages[currentIndex];
-    };
+	const nextImage = () => navigate(1);
+	const prevImage = () => navigate(-1);
+
   </script>
   
   <div class="grid">
-	{#each images as image}
-    <button on:click={() => openOverlay(image)} class="image-button">
-		<img src={image} alt="Portfolio" class="portfolio-image" />
-	</button>
+	{#each categories as category}
+		<button on:click={() => openOverlay(category)} class="image-button">
+			<img src={`/${category}/${category}_0.jpg`} alt="Portfolio" class="portfolio-image" />
+		</button>
 	{/each}
   </div>
   
