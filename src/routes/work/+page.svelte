@@ -5,16 +5,23 @@
 
 <script>
 
-	let categories = ['greystone', 'hill_country', 'jrc', 'office'];
-	let selectedImage = null;
+	let categories = [
+		{ name: 'greystone', heading: 'Greystone Circle' },
+		{ name: 'hill_country', heading: 'Hill Country Retreat' },
+		{ name: 'jrc', heading: 'Monteola by JRC' },
+		{ name: 'office', heading: 'Oil & Gas Office' }
+	];
+  	let selectedImage = null;
 	let selectedCategoryImages = [];
   	let currentIndex = 0;
+	let currentCategoryHeading = '';
   
 	function openOverlay(category) {
 		selectedCategoryImages = Array.from({ length: 5 }, (_, imageIndex) => `/${category}/${category}_${imageIndex}.jpg`);
 		currentIndex = 0;
 		selectedImage = selectedCategoryImages[currentIndex];
 		document.body.classList.add('overlay-open');
+		currentCategoryHeading = categories.find(c => c.name === category)?.heading || '';
 	}
 
 	function navigate(direction) {
@@ -25,6 +32,7 @@
 	function closeOverlay() {
 		selectedImage = null;
 		document.body.classList.remove('overlay-open');
+		currentCategoryHeading = '';
 	}
 
 	const nextImage = () => navigate(1);
@@ -34,9 +42,11 @@
   
   <div class="grid">
 	{#each categories as category}
-		<button on:click={() => openOverlay(category)} class="image-button">
-			<img src={`/${category}/${category}_0.jpg`} alt="Portfolio" class="portfolio-image" />
+		<button on:click={() => openOverlay(category.name)} class="image-button">
+			<div class="image-container">
+			<img src={`/${category.name}/${category.name}_0.jpg`} alt="Portfolio" class="portfolio-image" />
 			<p class="image-heading">{category.heading}</p>
+			</div>
 		</button>
 	{/each}
   </div>
@@ -47,6 +57,7 @@
 		<button on:click={prevImage} class="prev">&#8249;</button>
 		<div class="overlay-content">
 			<img src={selectedImage} alt="Maximized" class="maximized-image" />
+			<p class="overlay-heading">{currentCategoryHeading}</p>
 		</div>
 		<button on:click={nextImage} class="next">&#8250;</button>
 	</div>
@@ -146,4 +157,26 @@
 		border: none;
 		color: white;
 	}
+
+	.image-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		}
+
+		.image-heading {
+		margin-top: 8px; /* Adjust as needed */
+		font-size: 14px; /* Adjust as needed */
+		}
+
+	.overlay-heading {
+		position: absolute;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 20px; /* Adjust as needed */
+    color: white;
+  }
   </style>
