@@ -30,3 +30,25 @@ body {
 		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
 }
 
+/* Add this at the end of your existing styles */
+
+.overlay-open {
+	overflow: hidden;
+}
+
+.nav-link {
+	/* Disable pointer events when overlay is open */
+	pointer-events: auto;
+}
+
+.overlay-open .nav-link {
+	pointer-events: none;
+	cursor: not-allowed;
+	color: #999;
+}
+
+.overlay-open .navbar-brand,
+.overlay-open .navbar-toggler,
+.overlay-open .nav-link {
+  display: none;
+}
