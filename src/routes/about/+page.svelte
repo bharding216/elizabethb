@@ -9,7 +9,7 @@
 
 <div class="row text-center">
 	<div class="col-6 d-flex flex-column justify-content-center">
-		<div class="row py-3">
+		<div class="row pb-3 pt-5">
 			<div class="col-12">
 				<h2>Your Style, Our Passion</h2>
 			</div>
