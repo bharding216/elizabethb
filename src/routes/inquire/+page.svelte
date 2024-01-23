@@ -24,7 +24,8 @@
         phone: '',
         city: '',
         projectType: '',
-        projectBudget: ''
+        projectBudget: '',
+        'g-recaptcha-response': '',
     };
 
     let confirmationMessage = '';
@@ -38,6 +39,7 @@
         let name = form.get('name');
         let email = form.get('email');
         let message = form.get('message');
+        let recaptchaResponse = grecaptcha.getResponse();
 
         const response = await fetch('https://2jealshrq3ogi6nfghzshfj5a40kdokp.lambda-url.us-east-2.on.aws/', {
             method: 'POST',
@@ -48,6 +50,7 @@
                 name: name,
                 email: email,
                 message: message,
+                'g-recaptcha-response': recaptchaResponse,
             }),
         });
         
