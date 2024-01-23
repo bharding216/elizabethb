@@ -24,19 +24,14 @@
         phone: '',
         city: '',
         projectType: '',
-        projectBudget: '',
-        panda: ''
+        projectBudget: ''
     };
 
     let confirmationMessage = '';
+    let errorMessage = '';
 
     async function handleSubmit(event) {
         event.preventDefault();
-
-        if (formData.panda.toLowerCase() !== 'white') {
-            console.log("Answer was not white")
-            return;
-        }
 
         const form = new FormData(event.target);
 
@@ -64,7 +59,7 @@
                 behavior: 'smooth'
             });
         } else {
-            confirmationMessage = 'Error sending email';
+            errorMessage = 'Our apologies; there was an error processing your request. Please try again later.';
             console.error('Error sending email');
         }
     }
@@ -75,6 +70,8 @@
 
     {#if confirmationMessage}
         <p class="confirmation">{confirmationMessage}</p>
+    {:else if errorMessage}
+        <p class="error-message">{errorMessage}</p>
     {/if}
 
     <form on:submit={handleSubmit}>
@@ -146,5 +143,9 @@
 <style>
     .confirmation {
         color: rgb(0, 0, 184)
+    }
+
+    .error-message {
+        color: rgb(199, 0, 0)
     }
 </style>
