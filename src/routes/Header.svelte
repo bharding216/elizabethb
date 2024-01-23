@@ -18,7 +18,7 @@
 			</button>
 
 			<!--Links to the right-->
-			<div class="navbar-collapse collapse" id="navbarSupportedContent">
+			<div class="navbar-collapse collapse mb-3" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto me-5">
 					<li aria-current={$page.url.pathname === '/portfolio' ? 'page' : undefined} class="nav-item">
 						<a href="/portfolio" class="nav-link">Portfolio</a>
@@ -42,11 +42,17 @@
 </header>
 
 <style>
-  .navbar-nav a {
-    text-transform: uppercase;
-  }
+	.navbar-nav a {
+		text-transform: uppercase;
+	}
 
-  .nav-link {
-	font-size: 18px;
-  }
+	.nav-link {
+		font-size: 16px;
+	}
+
+	@media (max-width: 768px) {
+		.nav-link {
+			font-size: 14px;
+		}
+	}
 </style>

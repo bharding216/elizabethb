@@ -29,15 +29,21 @@
 		</div>
 	</div>
 
-	<div class="col-6">
-		<img class="header-image" src="greystone/greystone_2.jpg" alt="Our services page.">
+	<div class="col-6 d-flex align-items-center justtify-content-center">
+		<img class="services-image" src="greystone/greystone_0.jpg" alt="Our services page.">
 	</div>
 </div>
 
 
 <style>
-	.header-image {
-		width: 100%;
-		height: auto;
+    li {
+        padding-bottom: 10px;
+        font: 1.0em 'Lato', sans-serif;
+    }
+
+    .services-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 </style>

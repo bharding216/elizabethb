@@ -22,4 +22,11 @@
 		text-align: center;
 		padding: 100px 100px 0px;
 	}
+
+	@media screen and (max-width: 1000px) {
+		.home-page-quote {
+			font-size: 1.5em;
+			padding: 50px 50px 0px;
+		}
+	}
 </style>

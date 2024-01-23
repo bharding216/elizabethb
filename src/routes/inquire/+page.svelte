@@ -3,7 +3,20 @@
 	<meta name="description" content="Contact us" />
 </svelte:head>
 
+
 <script>
+    import { onMount } from 'svelte';
+
+    let siteKey = '6Lf85lkpAAAAAGIBlyA9VIZjMKLR7EMlXmV30w-v';
+
+    onMount(async () => {
+        const script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js';
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+    });
+
     let formData = {
         name: '',
         email: '',
@@ -98,7 +111,7 @@
             </select>
             </div>
         
-        <p>Project budget:</p>
+        <p class="mb-2">Project budget:</p>
         <div class="form-check mb-3 col-md-12">
             <div>
                 <input type="radio" class="form-check-input" id="low_budget" name="projectBudget" value="50" bind:group={formData.projectBudget}>
@@ -122,12 +135,7 @@
             <label for="message">Message</label>
         </div>   
 
-        <p class="m-0 pb-1" style="color: #808080; font-size: 14px;">To verify you're a human:</p>
-        <div class="form-floating mb-3 col-md-12 col-lg-6">
-            <input type="text" class="form-control" bind:value={formData.panda} id="panda" name="panda"
-                placeholder="Pandas are black and:" required>
-            <label for="panda">Pandas are black and:</label>
-        </div>
+        <div class="g-recaptcha mb-3" data-sitekey={siteKey}></div>
     
         <button type="submit" class="btn btn-secondary">Submit</button>
 
