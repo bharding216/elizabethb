@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Work</title>
+	<title>Portfolio</title>
 	<meta name="description" content="Our portfolio" />
 </svelte:head>
 
@@ -8,7 +8,7 @@
 	let categories = [
 		{ name: 'greystone', heading: 'Greystone Circle' },
 		{ name: 'hill_country', heading: 'Hill Country Retreat' },
-		{ name: 'jrc', heading: 'Monteola by JRC' },
+		{ name: 'jrc', heading: 'Monteola' },
 		{ name: 'office', heading: 'Oil & Gas Office' }
 	];
   	let selectedImage = null;

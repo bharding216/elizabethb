@@ -7,7 +7,7 @@
 		<div class="container">
 			<!--Logo to the left-->
 			<a class="navbar-brand" href="/">
-				<img alt="Company logo" src="/logo.png" width="150" height="150" class="d-inline-block align-top">
+				<img alt="Company logo" src="/logo.png" width="200" height="200" class="d-inline-block align-top">
 			</a>
 
 			<button class="navbar-toggler" 
@@ -20,12 +20,16 @@
 			<!--Links to the right-->
 			<div class="navbar-collapse collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto me-5">
-					<li aria-current={$page.url.pathname === '/work' ? 'page' : undefined} class="nav-item">
-						<a href="/work" class="nav-link">Work</a>
+					<li aria-current={$page.url.pathname === '/portfolio' ? 'page' : undefined} class="nav-item">
+						<a href="/portfolio" class="nav-link">Portfolio</a>
 					</li>
 
 					<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined} class="nav-item">
 						<a href="/about" class="nav-link">About</a>
+					</li>
+
+					<li aria-current={$page.url.pathname === '/services' ? 'page' : undefined} class="nav-item">
+						<a href="/services" class="nav-link">Services</a>
 					</li>
 
 					<li aria-current={$page.url.pathname === '/inquire' ? 'page' : undefined} class="nav-item">
@@ -40,5 +44,9 @@
 <style>
   .navbar-nav a {
     text-transform: uppercase;
+  }
+
+  .nav-link {
+	font-size: 18px;
   }
 </style>
