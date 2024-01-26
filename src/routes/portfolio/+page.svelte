@@ -9,7 +9,8 @@
 		{ name: 'greystone', heading: 'Greystone Circle' },
 		{ name: 'hill_country', heading: 'Hill Country Retreat' },
 		{ name: 'jrc', heading: 'Monteola' },
-		{ name: 'office', heading: 'Oil & Gas Office' }
+		{ name: 'office', heading: 'Oil & Gas Office' },
+		{ name: 'mckinney', heading: 'McKinney Homestead' }
 	];
   	let selectedImage = null;
 	let selectedCategoryImages = [];
@@ -38,20 +39,20 @@
 	const nextImage = () => navigate(1);
 	const prevImage = () => navigate(-1);
 
-  </script>
+</script>
   
-  <div class="grid">
+<div class="grid">
 	{#each categories as category}
 		<button on:click={() => openOverlay(category.name)} class="image-button">
 			<div class="image-container">
-			<img src={`/${category.name}/${category.name}_0.jpg`} alt="Portfolio" class="portfolio-image" />
-			<p class="image-heading">{category.heading}</p>
+				<img src={`/${category.name}/${category.name}_0.jpg`} alt="Portfolio" class="portfolio-image" />
+				<p class="image-heading">{category.heading}</p>
 			</div>
 		</button>
 	{/each}
-  </div>
-  
-  {#if selectedImage !== null}
+</div>
+
+{#if selectedImage !== null}
 	<div class="overlay">
 		<button on:click={closeOverlay} class="close-button">✕</button>
 		<button on:click={prevImage} class="prev">&#8249;</button>
@@ -61,7 +62,7 @@
 		</div>
 		<button on:click={nextImage} class="next">&#8250;</button>
 	</div>
-	{/if}
+{/if}
 
 <style>
 	.grid {
@@ -84,13 +85,33 @@
 		border: none;
 		padding: 0;
 		margin: 0;
-  }
+	}
+
+	.image-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+		padding-bottom: 30px;
+	}
 
 	.portfolio-image {
 	  width: 100%;
-	  height: auto;
+	  height: 100%;
+	  object-fit: cover;
+	  margin-bottom: 8px;
+	}
+
+	.image-heading {
+		margin-top: 8px; /* Adjust as needed */
+		font-size: 14px; /* Adjust as needed */
 	}
   
+
 	.overlay {
 		position: fixed;
 		top: 0;
@@ -158,25 +179,12 @@
 		color: white;
 	}
 
-	.image-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		}
-
-		.image-heading {
-		margin-top: 8px; /* Adjust as needed */
-		font-size: 14px; /* Adjust as needed */
-		}
-
 	.overlay-heading {
 		position: absolute;
 		top: 10px;
 		left: 50%;
 		transform: translateX(-50%);
 		font-size: 20px; /* Adjust as needed */
-    color: white;
-  }
-  </style>
+		color: white;
+	}
+</style>

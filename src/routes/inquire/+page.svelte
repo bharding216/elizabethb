@@ -38,6 +38,10 @@
 
         let name = form.get('name');
         let email = form.get('email');
+        let phone = form.get('phone');
+        let city = form.get('city');
+        let projectType = form.get('projectType');
+        let projectBudget = form.get('projectBudget');
         let message = form.get('message');
         let recaptchaResponse = grecaptcha.getResponse();
 
@@ -49,6 +53,10 @@
             body: JSON.stringify({
                 name: name,
                 email: email,
+                phone: phone,
+                city: city,
+                projectType: projectType,
+                projectBudget: projectBudget,
                 message: message,
                 'g-recaptcha-response': recaptchaResponse,
             }),
