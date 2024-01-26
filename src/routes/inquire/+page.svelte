@@ -14,6 +14,11 @@
         script.src = 'https://www.google.com/recaptcha/api.js';
         script.async = true;
         script.defer = true;
+
+        script.addEventListener('load', () => {
+            // Google reCAPTCHA script has loaded
+        });
+
         document.body.appendChild(script);
     });
 
@@ -30,9 +35,14 @@
 
     let confirmationMessage = '';
     let errorMessage = '';
+    let isLoading = false;
 
     async function handleSubmit(event) {
         event.preventDefault();
+
+        if (isLoading) return; // Prevent multiple submissions during loading
+
+        isLoading = true;
 
         const form = new FormData(event.target);
 
@@ -65,6 +75,18 @@
         if (response.ok) {
             const responseData = await response.json();
             confirmationMessage = responseData.message;
+
+            // Reset form fields
+            formData = {
+                name: '',
+                email: '',
+                message: '',
+                phone: '',
+                city: '',
+                projectType: '',
+                projectBudget: '',
+                'g-recaptcha-response': '',
+            };
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -73,6 +95,8 @@
             errorMessage = 'Our apologies; there was an error processing your request. Please try again later.';
             console.error('Error sending email');
         }
+
+        isLoading = false;  
     }
 </script>
 
@@ -99,7 +123,7 @@
         </div>
 
         <div class="form-floating mb-3 col-md-12 col-lg-6">
-            <input type="phone" class="form-control" bind:value={formData.phone} id="phone" name="phone"
+            <input type="tel" class="form-control" bind:value={formData.phone} id="phone" name="phone"
                 placeholder="Phone" autocomplete="off" required>
             <label for="phone">Phone *</label>
             </div>
@@ -147,6 +171,11 @@
     
         <button type="submit" class="btn btn-secondary">Submit</button>
 
+        {#if isLoading}
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        {/if}
     </form>
 </div>
 
