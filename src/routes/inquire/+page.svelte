@@ -143,27 +143,29 @@
             </select>
             </div>
         
-        <p class="mb-2">Project budget:</p>
-        <div class="form-check mb-3 col-md-12">
-            <div>
-                <input type="radio" class="form-check-input" id="low_budget" name="projectBudget" value="50" bind:group={formData.projectBudget}>
-                <label class="form-check-label" for="low_budget">&lt;$50k</label>
-            </div>
-            
-            <div>
-                <input type="radio" class="form-check-input" id="med_budget" name="projectBudget" value="50_to_150" bind:group={formData.projectBudget}>
-                <label class="form-check-label" for="med_budget">$50k - $150k</label>
-            </div>
-            
-            <div>
-                <input type="radio" class="form-check-input" id="high_budget" name="projectBudget" value="150" bind:group={formData.projectBudget}>
-                <label class="form-check-label" for="high_budget">$150k+</label>
+        <div class="budget-div" style="margin-left: 10px">
+            <p class="mb-2">Project budget:</p>
+            <div class="form-check mb-3 col-md-12">
+                <div class="mb-2">
+                    <input type="radio" class="form-check-input" id="low_budget" name="projectBudget" value="50" bind:group={formData.projectBudget}>
+                    <label class="form-check-label" for="low_budget">&lt;$50k</label>
+                </div>
+                
+                <div class="mb-2">
+                    <input type="radio" class="form-check-input" id="med_budget" name="projectBudget" value="50_to_150" bind:group={formData.projectBudget}>
+                    <label class="form-check-label" for="med_budget">$50k - $150k</label>
+                </div>
+                
+                <div>
+                    <input type="radio" class="form-check-input" id="high_budget" name="projectBudget" value="150" bind:group={formData.projectBudget}>
+                    <label class="form-check-label" for="high_budget">$150k+</label>
+                </div>
             </div>
         </div>
 
         <div class="form-floating mb-3 col-md-12 col-lg-6">
             <textarea class="form-control" bind:value={formData.message} id="message" name="message"
-                placeholder="Message" style="height: 100px;"></textarea>
+                placeholder="Message" style="height: 125px;"></textarea>
             <label for="message">Message</label>
         </div>   
 

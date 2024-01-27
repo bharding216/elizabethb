@@ -7,7 +7,8 @@
 		<div class="container">
 			<!--Logo to the left-->
 			<a class="navbar-brand" href="/">
-				<img alt="Company logo" src="/logo.png" width="200" height="200" class="d-inline-block align-top">
+				<img alt="Company logo" src="/logo.png" class="d-none d-md-inline-block align-top" width="200" height="200">
+				<img alt="Company logo" src="/logo.png" class="d-md-none d-inline-block align-top" width="100" height="100">
 			</a>
 
 			<button class="navbar-toggler" 

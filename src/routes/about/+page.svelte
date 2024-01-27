@@ -3,12 +3,12 @@
 	<meta name="description" content="About my company" />
 </svelte:head>
 
-<div>
+<div class="mb-3">
 	<img class="header-image" src="/greystone/greystone_2.jpg" alt="My about page header.">
 </div>
 
 <div class="row text-center">
-	<div class="col-6 d-flex flex-column justify-content-center">
+	<div class="col-12 col-sm-6 mb-5 mb-sm-0 d-flex flex-column justify-content-center">
 		<div class="row pb-3 pt-5">
 			<div class="col-12">
 				<h2>Your Style, Our Passion</h2>
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 
-	<div class="col-6">
+	<div class="col-12 col-sm-6">
 		<img class="header-image" src="/Headshot3_IG.jpg" alt="My about page header.">
 	</div>
 </div>
