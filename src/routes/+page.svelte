@@ -12,7 +12,7 @@
 </section>
 
 <div>
-	<p class="home-page-quote">Beauty and comfort is what we keep in mind as we collaborate together to design a space that is personal and distinct for you and your home.</p>
+	<p class="home-page-quote">"Beauty and comfort is what we keep in mind as we collaborate together to design a space that is personal and distinct for you and your home."</p>
 </div>
 
 <style>
