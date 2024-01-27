@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>San Antonio's Premier Interior Designer</title>
+	<meta name="description" content="San Antonio premier interior designer" />
 </svelte:head>
 
 <section>
