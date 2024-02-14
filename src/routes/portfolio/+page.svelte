@@ -10,7 +10,8 @@
 		{ name: 'hill_country', heading: 'Hill Country Retreat' },
 		{ name: 'jrc', heading: 'Monteola' },
 		{ name: 'office', heading: 'Oil & Gas Office' },
-		{ name: 'mckinney', heading: 'McKinney Homestead' }
+		{ name: 'mckinney', heading: 'McKinney Homestead' },
+		{ name: 'greens_cliff', heading: 'Greens Cliff'}
 	];
   	let selectedImage = null;
 	let selectedCategoryImages = [];
@@ -107,8 +108,8 @@
 	}
 
 	.image-heading {
-		margin-top: 8px; /* Adjust as needed */
-		font-size: 14px; /* Adjust as needed */
+		margin-top: 8px;
+		font-size: 14px;
 	}
   
 
@@ -129,11 +130,11 @@
 	.overlay-content {
 		max-width: 80%;
 		max-height: 80%;
-		background-color: #fff; /* Set a background color for the content area */
-		overflow: hidden; /* Hide content overflow */
-		position: relative; /* Add relative positioning */
-		border-radius: 8px; /* Optional: Add rounded corners */
-		box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional: Add box shadow for depth */
+		background-color: #fff;
+		overflow: hidden;
+		position: relative;
+		border-radius: 8px; 
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -184,7 +185,7 @@
 		top: 10px;
 		left: 50%;
 		transform: translateX(-50%);
-		font-size: 20px; /* Adjust as needed */
+		font-size: 20px; 
 		color: white;
 	}
 </style>
