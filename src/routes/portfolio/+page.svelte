@@ -11,7 +11,8 @@
 		{ name: 'jrc', heading: 'Monteola' },
 		{ name: 'office', heading: 'Oil & Gas Office' },
 		{ name: 'mckinney', heading: 'McKinney Homestead' },
-		{ name: 'greens_cliff', heading: 'Greens Cliff'}
+		{ name: 'greens_cliff', heading: 'Greens Cliff'},
+		{ name: 'gatlin_creek', heading: 'Gatlin Creek Dentistry'}
 	];
   	let selectedImage = null;
 	let selectedCategoryImages = [];
